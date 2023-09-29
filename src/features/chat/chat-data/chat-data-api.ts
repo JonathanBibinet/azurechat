@@ -72,9 +72,9 @@ const findRelevantDocuments = async (query: string, chatThreadId: string) => {
 
   const relevantDocuments = await vectorStore.similaritySearch(query, 10, {
     vectorFields: vectorStore.config.vectorFieldName,
-    filter: `user eq '${await userHashedId()}' and chatThreadId eq '${chatThreadId}'`,
+    // filter: `user eq '${await userHashedId()}' and chatThreadId eq '${chatThreadId}'`,
   });
-
+  
   return relevantDocuments;
 };
 
